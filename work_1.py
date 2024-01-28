@@ -1,6 +1,6 @@
 import os
 import shutil
-
+#создание файла
 def create_file(filename):
     try:
         with open(filename, 'w'):
@@ -8,7 +8,7 @@ def create_file(filename):
         print(f"Файл '{filename}' создан.")
     except Exception as e:
         print(f"Ошибка '{filename}': {e}")
-
+#создание папки
 def create_folder(foldername):
     try:
         os.makedirs(foldername, exist_ok=True)
@@ -22,28 +22,28 @@ def delete_file(filename):
         print(f"Файл '{filename}' удален.")
     except Exception as e:
         print(f"Ошибка '{filename}': {e}")
-
+#Удаление папки
 def delete_folder(foldername):
     try:
         shutil.rmtree(foldername)
         print(f"Папка '{foldername}' удалена.")
     except Exception as e:
         print(f"Ошибка '{foldername}': {e}")
-
+#перемещение файла
 def move_file(source, destination):
     try:
         shutil.move(source, destination)
         print(f"Файл '{source}' перемещен в '{destination}'.")
     except Exception as e:
         print(f"Ошибка '{source}' в '{destination}': {e}")
-
+#копирование файла
 def copy_file(source, destination):
     try:
         shutil.copy2(source, destination)
         print(f"Файл '{source}' скопирован в '{destination}'.")
     except Exception as e:
         print(f"Ошибка '{source}' в '{destination}': {e}")
-
+# просмотр директории
 def list_directory(path):
     try:
         print(f"Содержимое папки '{path}':")
@@ -51,7 +51,7 @@ def list_directory(path):
             print(item)
     except Exception as e:
         print(f"Ошибка при получении содержимого папки '{path}': {e}")
-
+#изменение имени файла
 def rename_file(old_name, new_name):
     try:
         os.rename(old_name, new_name)
